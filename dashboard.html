@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ViralBot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Viral<span>Bot</span></div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- LOGIN VIEW -->
+        <div id="login-view" class="hero" style="display: none;">
+            <h1>Connect Your TikTok Account</h1>
+            <p>Authorize ViralBot to post videos on your behalf directly from your dashboard.</p>
+            <!-- TAUTAN OAUTH TIKTOK ASLI -->
+            <a id="tiktok-login-btn" href="https://www.tiktok.com/v2/auth/authorize/?client_key=aw964krq49etwtrs&response_type=code&scope=user.info.basic,user.info.profile,user.info.stats,video.list,video.publish&redirect_uri=https://derryimaw2103.github.io/privatehtml/dashboard.html&state=123" class="btn" style="margin-top: 1rem;">
+                Login with TikTok
+            </a>
+        </div>
+
+        <!-- DASHBOARD VIEW -->
+        <div id="dashboard-view" style="display: none;">
+            <div class="dashboard-header">
+                <div class="profile-section glass-container">
+                    <img src="https://ui-avatars.com/api/?name=Viral+Bot&background=fe2c55&color=fff&size=80" alt="Profile" class="profile-pic">
+                    <div class="profile-info">
+                        <h2>@viralbot_user</h2>
+                        <p>TikTok Creator</p>
+                    </div>
+                </div>
+                <div class="stats-section glass-container">
+                    <div class="stat-box">
+                        <h3>Followers</h3>
+                        <p class="stat-num">12.4K</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Likes</h3>
+                        <p class="stat-num">145K</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="upload-section glass-container">
+                    <h3>Upload New Video (Content Posting API)</h3>
+                    <form id="upload-form">
+                        <div class="form-group">
+                            <label>Video File (.mp4)</label>
+                            <input type="file" accept="video/mp4" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Caption / Description</label>
+                            <textarea rows="3" placeholder="Add a catchy caption and #hashtags..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;" id="upload-btn">Publish to TikTok</button>
+                    </form>
+                    <div id="upload-status" style="display: none; margin-top: 1rem; text-align: center;">
+                        <p id="status-text" style="color: var(--accent-cyan); font-weight: bold;">Uploading... <span class="spinner"></span></p>
+                    </div>
+                </div>
+
+                <div class="history-section glass-container">
+                    <h3>Recent Videos (video.list)</h3>
+                    <table class="video-table">
+                        <thead>
+                            <tr>
+                                <th>Thumbnail</th>
+                                <th>Title</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div class="mock-thumb"></div></td>
+                                <td>My Awesome Viral Video</td>
+                                <td><span class="badge success">Published</span></td>
+                                <td>Today</td>
+                            </tr>
+                            <tr>
+                                <td><div class="mock-thumb"></div></td>
+                                <td>Behind The Scenes Part 1</td>
+                                <td><span class="badge success">Published</span></td>
+                                <td>Yesterday</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ViralBot. All rights reserved. | Contact: <a href="mailto:akunderrylgr10@gmail.com">akunderrylgr10@gmail.com</a></p>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
