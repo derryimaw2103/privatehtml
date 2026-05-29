@@ -253,3 +253,146 @@ footer {
     padding: 1.5rem;
   }
 }
+
+/* Dashboard Specific Styles */
+.dashboard-header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+  padding: 2rem;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  border: 3px solid var(--accent-cyan);
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.profile-info p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.stats-section {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+  padding: 2rem;
+  justify-content: space-around;
+}
+
+.stat-box {
+  text-align: center;
+}
+
+.stat-box h3 {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-color);
+  margin: 0;
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  color: #fff;
+  font-family: inherit;
+  outline: none;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  border-color: var(--accent-cyan);
+}
+
+.video-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.video-table th {
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid var(--card-border);
+  color: var(--text-secondary);
+}
+
+.video-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  vertical-align: middle;
+}
+
+.mock-thumb {
+  width: 60px;
+  height: 80px;
+  background: linear-gradient(45deg, #222, #444);
+  border-radius: 5px;
+}
+
+.badge.success {
+  background: rgba(37,244,238,0.2);
+  color: var(--accent-cyan);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.spinner {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 900px) {
+  .dashboard-header, .dashboard-content {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+}
+
